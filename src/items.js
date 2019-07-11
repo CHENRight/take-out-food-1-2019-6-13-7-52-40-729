@@ -1,3 +1,4 @@
+
 function loadAllItems() {
   return [{
     id: 'ITEM0001',
@@ -16,4 +17,8 @@ function loadAllItems() {
     name: '冰锋',
     price: 2.00
   }];
+}
+
+module.exports = {
+  loadAllItems,
 }
