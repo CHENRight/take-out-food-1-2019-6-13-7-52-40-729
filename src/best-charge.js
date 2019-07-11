@@ -7,8 +7,7 @@ const createItemList = items => {
     item = item.replace(/\s/ig, '');
     let temp = item.split("x");
     result[temp[0]] = temp[1];
-  })
-  //console.log(result);
+  });
   return result;
 }
 
@@ -16,7 +15,6 @@ const getItemInfo = (id) => {
   return loadallitems.loadAllItems().filter(item => item.id === id)[0]
 }
 
-//id count totalProce
 const getCompleteBookInfo = (booking) => {
   let result = [];
   Object.keys(booking).forEach(id => {
@@ -28,7 +26,6 @@ const getCompleteBookInfo = (booking) => {
   return result;
 }
 
-//{save_price: 13, total_price: 25, type: "指定菜品半价(黄焖鸡，凉皮)"}
 const getTotalPriceWithPromotion = (bookingInfo) => {
 
   let promotionID = loadpromotion.loadPromotions()[1].items;
