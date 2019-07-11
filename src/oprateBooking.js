@@ -1,5 +1,5 @@
 
-const oprateBooking = items => {
+const createItemList = items => {
   let result = {}
   items.forEach(item => {
     item = item.replace(/\s/ig, '');
@@ -10,5 +10,5 @@ const oprateBooking = items => {
 }
 
 module.exports = {
-  oprateBooking,
+  createItemList,
 }
