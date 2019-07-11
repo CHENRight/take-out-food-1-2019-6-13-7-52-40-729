@@ -1,6 +1,7 @@
+const Items = require("./items");
 
 const getItemInfo = (id) => {
-  return loadAllItems().filter(item => item.id === id)[0]
+  return Items.loadAllItems().filter(item => item.id === id)[0];
 }
 
 const getCompleteBookInfo = (booking) => {
@@ -8,7 +9,7 @@ const getCompleteBookInfo = (booking) => {
   Object.keys(booking).forEach(id => {
     let tempItem = getItemInfo(id);
     tempItem.count = parseInt(booking[id]);
-    tempItem.totalPrice = parseInt(tempItem.count * tempItem.price);
+    tempItem.totalPrice = tempItem.count * tempItem.price;
     result.push(tempItem);
   })
   return result;
